@@ -7,8 +7,6 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class Solution {
-
-    // Complete the birthday function below.
     static int birthday(List<Integer> s, int d, int m)
     {
         int count = 0;
