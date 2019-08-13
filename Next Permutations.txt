@@ -1,0 +1,58 @@
+123453421class Solution {
+    public void nextPermutation(int[] nums) 
+    {
+        int l = nums.length;
+        //System.out.println("Length = "+l);
+        if(l <= 2)
+        {
+            //System.out.println("s1");
+            if(l == 1)
+            {
+            System.out.print(nums[0]);
+            }
+            if(l == 2)
+            {
+                System.out.print(nums[1]+","+nums[0]);
+            }
+        }
+        else
+        {
+        boolean flag = false;
+        for(int i = l-1; i >1; i--)
+        {
+            if(nums[i-1] > nums[i])
+            {
+                continue;
+            }
+            else
+            {
+                flag = true;
+                Arrays.sort(nums,i,l);
+                int max_pos = i;
+                for(int j = i; j < l; j++)
+                {
+                    if(nums[j] > nums[i-1])
+                    {
+                        max_pos = j;
+                        break;
+                    }
+                }
+                int temp = nums[i-1];
+                nums[i-1] = nums[max_pos];
+                nums[max_pos] = temp;
+                Arrays.sort(nums,i,l);
+                break;
+            }
+        }
+        if(flag == false)
+        {
+            Arrays.sort(nums);
+        }
+        for(int i = 0; i < l-1; i++)
+        {
+            System.out.print(nums[i]+",");
+        }
+        System.out.print(nums[l-1]);   
+        }
+    }
+}
