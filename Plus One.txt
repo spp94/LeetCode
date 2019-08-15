@@ -1,0 +1,20 @@
+import java.math.*;
+class Solution {
+    public int[] plusOne(int[] digits) 
+    {
+        String s = "";
+        for(Integer i : digits)
+        {
+            s = s + (i + "");
+        }
+        //System.out.println(s);
+        BigInteger b1 = new BigInteger(s);
+        String b2 = b1.add(new BigInteger("1")).toString();
+        int[] res = new int[b2.length()];
+        for(int i = 0; i < b2.length(); i++)
+        {
+            res[i] = b2.charAt(i)-48;
+        }
+        return res;
+    }
+}
