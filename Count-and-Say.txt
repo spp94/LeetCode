@@ -2,7 +2,7 @@ class Solution {
     public static String countAndSay(int n) 
     {
        String[] a = {"1", "11", "21", "1211", "111221"};
-       if(n <= a.length)
+       if(n <= a.length) 
        {
            return a[n-1]; 
        }
