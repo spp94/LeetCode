@@ -1,6 +1,6 @@
 import java.math.*;
 import java.util.*;
-class Solution {
+class Solution { 
     public String multiply(String num1, String num2) 
     {
        BigInteger b1 = new BigInteger(num1);
