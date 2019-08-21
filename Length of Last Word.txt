@@ -5,5 +5,5 @@ class Solution {
       
           return str[str.length-1].length();   
         
-    }
+    } 
 }
