@@ -1,5 +1,5 @@
 import java.math.*;
-class Solution {
+class Solution{
     public int[] plusOne(int[] digits) 
     {
         String s = "";
