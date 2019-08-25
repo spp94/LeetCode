@@ -15,7 +15,7 @@ class Solution {
                 if((j-i+1) == set.size())
                 {
                     c++;
-                }
+                } 
                 else
                 {
                     break;
