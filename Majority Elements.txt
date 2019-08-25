@@ -1,6 +1,6 @@
 class Solution  {
     public int majorityElement(int[] nums) 
-    {
+    { 
         HashSet<Integer> set = new HashSet<Integer>();
         for(Integer i : nums)
         {
