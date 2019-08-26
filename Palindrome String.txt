@@ -1,0 +1,21 @@
+public class Solution {
+    public int isPalindrome(String A) 
+    {
+        A = A.trim().toLowerCase();
+        String forward = "", reverse = "";
+        for(int i = 0; i < A.length(); i++)
+        {
+            if((A.charAt(i) >= 97 && A.charAt(i) <= 122) || (A.charAt(i) >= 48 && A.charAt(i) <= 57))
+            {
+                forward = forward + A.charAt(i);
+                reverse = A.charAt(i) + reverse;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        //System.out.println(forward+" "+reverse);
+        return forward.equals(reverse) ? 1 : 0;
+    }
+}
