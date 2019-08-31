@@ -1,0 +1,110 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+
+/*
+ * Complete the 'maxEvents' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER_ARRAY arrival
+ *  2. INTEGER_ARRAY duration
+ */
+
+int maxEvents(vector<int> arrival, vector<int> duration) {
+  int len_arrival = arrival.size();
+  int temp_arr[len_arrival];
+  for (int i = 0; i < arrival.size(); i++) {
+    duration[i] = duration[i] + arrival[i];
+    temp_arr[i] = i;
+  }
+  sort(temp_arr, temp_arr + len_arrival,
+       [&duration, &arrival](size_t a, size_t b) {
+         if (duration[a] < duration[b])
+           return true;
+         else if (duration[a] == duration[b] && arrival[a] < arrival[b])
+           return true;
+         return false;
+       });
+  int result = 1;
+  int previousEnd = duration[temp_arr[0]];
+  for (int j = 1; j < len_arrival; j++) {
+    if (arrival[temp_arr[j]] >= previousEnd) {
+      result++;
+      previousEnd = duration[temp_arr[j]];
+    }
+  }
+  return result;
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string arrival_count_temp;
+    getline(cin, arrival_count_temp);
+
+    int arrival_count = stoi(ltrim(rtrim(arrival_count_temp)));
+
+    vector<int> arrival(arrival_count);
+
+    for (int i = 0; i < arrival_count; i++) {
+        string arrival_item_temp;
+        getline(cin, arrival_item_temp);
+
+        int arrival_item = stoi(ltrim(rtrim(arrival_item_temp)));
+
+        arrival[i] = arrival_item;
+    }
+
+    string duration_count_temp;
+    getline(cin, duration_count_temp);
+
+    int duration_count = stoi(ltrim(rtrim(duration_count_temp)));
+
+    vector<int> duration(duration_count);
+
+    for (int i = 0; i < duration_count; i++) {
+        string duration_item_temp;
+        getline(cin, duration_item_temp);
+
+        int duration_item = stoi(ltrim(rtrim(duration_item_temp)));
+
+        duration[i] = duration_item;
+    }
+
+    int result = maxEvents(arrival, duration);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+    );
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end()
+    );
+
+    return s;
+}
