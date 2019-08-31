@@ -1,0 +1,94 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+
+/*
+ * Complete the 'lookAndSayQueries' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY q as parameter.
+ */
+
+vector<int> lookAndSayQueries(vector<int> q) 
+{
+  
+  int a[65] = {0,        1,        2,        3,        5,        8,
+               10,       13,       16,       23,       32,       44,
+               56,       76,       102,      132,      174,      227,
+               296,      383,      505,      679,      892,      1151,
+               1516,     1988,     2602,     3400,     4410,     5759,
+               7519,     9809,     12810,    16710,    21758,    28356,
+               36955,    48189,    62805,    81803,    106647,   139088,
+               181301,   236453,   308150,   401689,   523719,   682571,
+               889807,   1159977,  1511915,  1970964,  2569494,  3349648,
+               4366359,  5691884,  7419702,  9671795,  12608013, 16435261,
+               21424450, 27928126, 36407156, 47459488, 61867080};
+               for(int i=0;i<q.size();i++)
+               q[i]=a[q[i]];
+
+  return q;             
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string q_count_temp;
+    getline(cin, q_count_temp);
+
+    int q_count = stoi(ltrim(rtrim(q_count_temp)));
+
+    vector<int> q(q_count);
+
+    for (int i = 0; i < q_count; i++) {
+        string q_item_temp;
+        getline(cin, q_item_temp);
+
+        int q_item = stoi(ltrim(rtrim(q_item_temp)));
+
+        q[i] = q_item;
+    }
+
+    vector<int> result = lookAndSayQueries(q);
+
+    for (int i = 0; i < result.size(); i++) {
+        fout << result[i];
+
+        if (i != result.size() - 1) {
+            fout << "\n";
+        }
+    }
+
+    fout << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+    );
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end()
+    );
+
+    return s;
+}
