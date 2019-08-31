@@ -1,0 +1,107 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+/*
+ * Complete the 'findSmallestDivisor' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. STRING s
+ *  2. STRING t
+ */
+
+int smallestFactor(int number) 
+{
+  if (number % 2 == 0)
+  {
+    return 2;
+  } 
+  else 
+  {
+    for (int i = 3; i * i <= number; i = i + 2) 
+    {
+      if (number % i == 0)
+       {
+        return i;
+       }
+    }
+  }
+  return number;
+}
+
+int findSmallestDivisor(string s, string t)
+ {
+  int result = 0;
+  bool flag = true;
+  int s_len = s.length();
+  int t_len = t.length();
+  if (t_len == 0 || s_len == 0 || t_len > s_len)
+   {
+    return -1;
+  }
+  for (int i = 0; i < s_len;)
+   {
+    result = t.compare(s.substr(i, t_len));
+    if (result != 0) 
+    {
+      flag = false;
+      break;
+    }
+    i = i + t_len;
+  }
+  if (!flag) {
+    return -1;
+  }
+  string substring = "";
+  int lowestfactor = smallestFactor(t_len);
+
+  for (int i = 0; i < t_len / lowestfactor; i++) 
+  {
+    flag = true;
+    substring += t[i];
+    for (int j = 0; j < t_len;) 
+    {
+      result = substring.compare(t.substr(j, i + 1));
+      if (result != 0) 
+      {
+        flag = false;
+        break;
+      }
+      j = j + i + 1;
+    }
+    if (flag) 
+    {
+      break;
+    }
+  }
+  if (flag) 
+  {
+    return substring.size();
+  } 
+  else
+  {
+    return t.size();
+  }
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string s;
+    getline(cin, s);
+
+    string t;
+    getline(cin, t);
+
+    int result = findSmallestDivisor(s, t);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
