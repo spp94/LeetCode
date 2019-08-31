@@ -1,0 +1,115 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+
+/*
+ * Complete the 'findSchedules' function below.
+ *
+ * The function is expected to return a STRING_ARRAY.
+ * The function accepts following parameters:
+ *  1. INTEGER workHours
+ *  2. INTEGER dayHours
+ *  3. STRING pattern
+ */
+
+char ar[9];
+void makeStrings(int index,int length,int workhours,string pattern,int dayHours,vector<string>&v){
+    
+    if(index>=length){
+        if(workhours==0){
+            v.push_back(pattern); 
+        }
+        return;
+    }
+    if((length-index)*dayHours<workhours){
+        return;
+    }
+    if(pattern[index]!='?'){
+        makeStrings(index+1,length,workhours-pattern[index]+48,pattern,dayHours,v);
+        return;
+    }
+    for(int i=0;i<=dayHours;i++){
+        if(workhours>=i){
+            pattern[index]=ar[i];
+            makeStrings(index+1,length,workhours-i,pattern,dayHours,v);
+            pattern[index]='?';
+        }
+        else{
+            return;
+        }
+    }
+}
+vector<string> findSchedules(int workHours, int dayHours, string pattern) {
+    ar[0]='0';
+    ar[1]='1';
+    ar[2] = '2';
+    ar[3] = '3';
+    ar[4] = '4';
+    ar[5] = '5';
+    ar[6] = '6';
+    ar[7] = '7';ar[8]='8';
+    vector<string> v;
+    makeStrings(0,pattern.size(),workHours,pattern,dayHours,v);
+    return v;
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string workHours_temp;
+    getline(cin, workHours_temp);
+
+    int workHours = stoi(ltrim(rtrim(workHours_temp)));
+
+    string dayHours_temp;
+    getline(cin, dayHours_temp);
+
+    int dayHours = stoi(ltrim(rtrim(dayHours_temp)));
+
+    string pattern;
+    getline(cin, pattern);
+
+    vector<string> result = findSchedules(workHours, dayHours, pattern);
+
+    for (int i = 0; i < result.size(); i++) {
+        fout << result[i];
+
+        if (i != result.size() - 1) {
+            fout << "\n";
+        }
+    }
+
+    fout << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+    );
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end()
+    );
+
+    return s;
+}
