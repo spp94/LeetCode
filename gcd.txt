@@ -1,0 +1,53 @@
+public static int gcd(int a, int b)
+        {
+            if (b == 0)
+                return a;
+            return gcd(b, a % b);
+        }
+
+        public static int splitTheArray(List<int> val)
+        {
+            int result = 0, n = val.Count;
+            for(int i = 0; i < val.Count; i++)
+            {
+                List<int> tempList = new List<int>();
+                int num = val[i];
+                tempList.Add(num);
+                //int count = val.Where(x => x == num).Count();
+                //if(count == 1)
+                //{
+                //    val.Remove(num);
+                //    result++;
+                //}
+                //else
+                //{
+                    int j = i + 1;
+                    for (; j < val.Count; j++)
+                    {
+                        int hcf = gcd(num, val[j]);
+                        if(hcf > 1)
+                        {
+                            result++;
+                            tempList.Add(val[j]);
+                            break;
+                        }
+                        else
+                        {
+                            tempList.Add(val[j]);
+                            continue;
+                        }
+                    }
+                    if (j == val.Count)
+                    {
+                      result = result + val.Count;
+                      break;
+                    }
+                    foreach (var item in tempList)
+                    {
+                        val.Remove(item);
+                    }
+                //}
+                i = -1;
+            }
+            return (result == 0) ? n : result;
+        }
