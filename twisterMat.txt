@@ -1,0 +1,31 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+# Complete the twisterMat function below.
+def twisterMat(n):
+    a1 = (24**n)
+    a2 = 9*(8**n)
+    a3 = 18*(3**n)
+    a4 = 9*(2**n)
+    a5 = 24
+    ans = a1 - a2 + a3 + a4 - a5
+    ans %= 1000000007
+    return ans
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    res = twisterMat(n)
+
+    fptr.write(str(res) + '\n')
+
+    fptr.close()
