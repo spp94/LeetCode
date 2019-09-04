@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+public class TestClass{
+    public static void main(String... args){
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
+        String[] str = sc.nextLine().trim().split(" ");
+        int[] arr = new int[n];
+        int[] pos = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = Integer.parseInt(str[i]);
+            pos[i] = i;
+        }
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n-1-i; j++)
+            {
+                if(arr[j] > arr[j+1])
+                {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    
+                    int temp_pos = pos[j];
+                    pos[j] = pos[j+1];
+                    pos[j+1]=temp_pos;
+                }
+            }
+        }
+        for(int i = 0; i < n; i++){
+            System.out.print(pos[i]+" ");
+        }
+    }
+}
+Language: Java 8
