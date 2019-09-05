@@ -1,0 +1,22 @@
+import java.util.*;
+class TestClass{
+    public static void main(String...args){
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
+        while(n-- != 0){
+            String s = sc.nextLine();
+            String s1 = s, s2 = s;
+            int l = s.length();
+            s1 = s1.replace("SUVO", "");
+            s2 = s2.replace("SUVOJIT", "");
+            int l_ = s2.length();
+            //System.out.println(s2);
+            int l2 = (l-s2.length())/7;
+            s2 = s2.replace("SUVO", "");
+            //System.out.println(s2);
+            int l1 = (l_ - s2.length())/4;
+            System.out.print("SUVO = "+l1+", ");
+            System.out.println("SUVOJIT = "+l2);
+        }
+    }
+}
