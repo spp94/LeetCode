@@ -1,0 +1,23 @@
+import java.util.*;
+public class TestClass{
+    public static void main(String...args){
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
+        while(n-- != 0){
+            String a = sc.nextLine().trim().toLowerCase();
+            String b = sc.nextLine().trim().toLowerCase();
+            int[] f = new int[26];
+            for(int i = 0; i < a.length(); i++){
+                f[a.charAt(i)-97]++;
+            }
+            for(int i = 0; i < b.length(); i++){
+                f[b.charAt(i)-97]--;
+            }
+            int res = 0;
+            for(int i = 0; i < 26; i++){
+                res += Math.abs(f[i]);
+            }
+            System.out.println(res);
+        }
+    }
+}
