@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String...args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt(), min = 0, max = 0;
+		sc.nextLine();
+		String s = sc.nextLine();
+		s = s.replaceAll("w", "vv");
+		//System.out.println(s.length());
+		max = s.length();
+		s = s.replaceAll("vv", "w");
+		//System.out.println(s.length());
+		min = s.length();
+		System.out.println(min + " "+ max);
+	}
+}
