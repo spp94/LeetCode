@@ -1,4 +1,4 @@
-import java.io.*; 
+import java.io.*;
 import java.math.*;
 import java.security.*;
 import java.text.*;
@@ -8,15 +8,19 @@ import java.util.regex.*;
 
 public class Solution {
 
-    
-    static int birthdayCakeCandles(int[] ar) 
-    {
-        Arrays.sort(ar);
-        int count = 1;
-        for(int i = ar.length-2; i >=0; i--)
-        {
-            if(ar[i] == ar[ar.length-1]) count++;
-            else break;
+    // Complete the birthdayCakeCandles function below.
+    static int birthdayCakeCandles(int[] ar) {
+        int max = 0;
+        for(Integer i : ar){
+            if(i>max){
+                max = i;
+            }
+        }
+        int count = 0;
+        for(Integer i : ar){
+            if(i == max){
+                count++;
+            }
         }
         return count;
     }
