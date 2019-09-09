@@ -1,0 +1,67 @@
+using Mindtree.CIS.eSign.Controllers;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+
+namespace Mindtree.CIS.eSign
+{
+    public class Sign
+    {
+        public string CallbackURL { get; set; }
+        public string Application { get; set; }
+        public string FormURL { get; set; }
+        public string DisclaimerMessage { get; set; }
+        public string WordDocumentPath { get; set; }
+        public string PdfPath { get; set; }
+        public Dictionary<string, string> Replacer { get; set; }
+
+        public void Initiate()
+        {
+            //Caller has to update the Appsettings in Web config for msign:mSignURI
+            if(ConfigurationManager.AppSettings["msign:mSignURI"] == null)
+            {
+                throw new ApplicationException("mSign URI is not configured in configuration file");
+            }
+            else
+            {
+                //Do nothing.
+            }
+
+            string mSignURI = ConfigurationManager.AppSettings["msign:mSignURI"];
+            
+            if(Replacer == null)
+            {
+                if (mSignURI.EndsWith("/"))
+                {
+                    mSignURI = mSignURI + Application + "/" + CallbackURL + "/" + FormURL + "/" + DisclaimerMessage + "/"
+                        + WordDocumentPath + "/" + PdfPath;
+                }
+                else
+                {
+                    mSignURI = mSignURI + "/" + Application + "/" + CallbackURL + "/" + FormURL + "/" + DisclaimerMessage + "/"
+                       + WordDocumentPath + "/" + PdfPath;
+                }
+            }
+            else
+            {
+                string replacerJson = JsonConvert.SerializeObject(Replacer, Formatting.Indented);
+
+                if (mSignURI.EndsWith("/"))
+                {
+                    mSignURI = mSignURI + Application + "/" + CallbackURL + "/" + FormURL + "/" + DisclaimerMessage + "/"
+                        + WordDocumentPath + "/" + PdfPath + "/" + replacerJson;
+                }
+                else
+                {
+                    mSignURI = mSignURI + "/" + Application + "/" + CallbackURL + "/" + FormURL + "/" + DisclaimerMessage + "/"
+                       + WordDocumentPath + "/" + PdfPath + "/" + replacerJson;
+                }
+            }
+
+            HttpContext.Current.Response.Redirect(mSignURI);
+        }
+    }
+}
