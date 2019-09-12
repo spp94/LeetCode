@@ -10,11 +10,12 @@ public class Solution {
 
     // Complete the squares function below.
     static int squares(int a, int b) {
-        int count = 0;
-        for(int i = a; i <= b; i++){
-            count += (Math.pow((int)(Math.sqrt(i)), 2) == i) ?  1 : 0;
+        if(Math.pow((int)Math.sqrt(a),2) == a){
+            return (int)Math.sqrt(b) - (int)(Math.sqrt(a)) + 1;
         }
-        return count;
+        else{
+            return (int)Math.sqrt(b) - (int)(Math.sqrt(a));
+        }
     }
 
     private static final Scanner scanner = new Scanner(System.in);
