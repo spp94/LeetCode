@@ -5,11 +5,18 @@ class TestClass{
         int n = Integer.parseInt(sc.nextLine());
         String[] s = sc.nextLine().trim().split(" ");
         String key = sc.nextLine();
-        for(int i = 0; i < s.length; i++){
+        System.out.println(indexOf(s, key));
+    }
+    public static int indexOf(String[] s, String key){
+        int i = 0;
+        for(i = 0; i < s.length; i++){
             if(s[i].equals(key)){
-                System.out.println(i);
-                break;
+                return i;
+            }
+            else{
+                continue;
             }
         }
+        return -1;
     }
 }
