@@ -1,0 +1,22 @@
+import java.util.*;
+class Main{
+    public static void main (String[] args) {
+        int[] arr = {1, 7, 5, 9, 2, 12, 3};
+        int key = 2;
+        countPairsWithDiff(arr, key);
+    }
+    public static void countPairsWithDiff(int[] arr, int key){
+        HashSet<Integer> set = new HashSet<>();
+        for(var number : arr){
+            set.add(number);
+        }
+        var count = 0;
+        for(var item : set){
+            if(set.contains(item+key)){
+                System.out.println("{"+item+", "+(item+key)+" }");
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
