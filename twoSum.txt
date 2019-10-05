@@ -1,0 +1,22 @@
+import java.util.*;
+class Main{
+    public static void main(String...args){
+        int[] arr = {2, 7, 11, 15};
+        int key = 9;
+        twoSum(arr, key);
+    }
+    public static void twoSum(int[] arr, int key){
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < arr.length; i++){
+            map.put(arr[i], i);
+        }
+        var count = 0;
+        for(var item : map.keySet()){
+            if(map.containsKey(key-item)){
+                System.out.println("{"+map.get(item)+", "+(map.get(key-item))+" }");
+                count++;
+            }
+        }
+        System.out.println(count/2);
+    }
+}
