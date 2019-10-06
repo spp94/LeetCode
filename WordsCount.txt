@@ -1,0 +1,16 @@
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class WordsCount {
+	public static void wordsCount(String s){
+		String[] arr = s.trim().split(" ");
+		HashMap<String, Integer> map = new HashMap<>();
+		for(String words : arr){
+			int count = map.containsKey(words) ? map.get(words)+1 : 1;
+			map.put(words, count);
+		}
+		for(String key : map.keySet()){
+			System.out.println(key+"  "+map.get(key));
+		}
+	}
+}

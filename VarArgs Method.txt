@@ -1,0 +1,8 @@
+public class VarArgs {
+	static void sum(int... arr){
+		System.out.println("VarArgs Method");
+	}
+	static void sum(int arr){
+		System.out.println("Normal Method");
+	}
+}
