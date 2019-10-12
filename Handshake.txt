@@ -1,34 +1,33 @@
-import java.io.*;
-import java.math.*;
-import java.text.*;
-import java.util.*;
-import java.util.regex.*;
+#include <bits/stdc++.h>
 
-public class Solution {
+using namespace std;
 
-    /*
-     * Complete the handshake function below.
-     */
-    static int handshake(int n) {
-       return (n*(n-1))/2;
+/*
+ * Complete the handshake function below.
+ */
+int handshake(int n) {
+    return (int)(n*(n-1)/2);
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    int t;
+    cin >> t;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    for (int t_itr = 0; t_itr < t; t_itr++) {
+        int n;
+        cin >> n;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        int result = handshake(n);
+
+        fout << result << "\n";
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+    fout.close();
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
-        int t = Integer.parseInt(scanner.nextLine().trim());
-
-        for (int tItr = 0; tItr < t; tItr++) {
-            int n = Integer.parseInt(scanner.nextLine().trim());
-
-            int result = handshake(n);
-
-            bufferedWriter.write(String.valueOf(result));
-            bufferedWriter.newLine();
-        }
-
-        bufferedWriter.close();
-    }
+    return 0;
 }
