@@ -10,7 +10,12 @@ public class Solution {
      * Complete the gameWithCells function below.
      */
     static int gameWithCells(int n, int m) {
-            return (n+n%2)*(m+m%2)/4;
+        int total = n*m;
+        n = (n % 2 == 0) ? n : n-1;
+        m = (m % 2 == 0) ? m : m-1;
+        int even = (int)((n*m)/4);
+        int odd = (int)((total - (n*m) + 1)/2);
+        return even+odd;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
