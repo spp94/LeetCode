@@ -1,4 +1,4 @@
-public class Solution { 
+public class Solution {
     public String longestCommonPrefix(ArrayList<String> A) 
     {
         int min_length = Integer.MAX_VALUE;
