@@ -1,0 +1,11 @@
+public static void numberOfVowelsAndConsonants(String s){
+		int vowelCount = 0;
+		String vowel = "aeiou";
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(vowel.contains(ch+"")){
+				vowelCount ++; 
+			}
+		}
+		System.out.println("Vowels = "+vowelCount);
+		System.out.println("Consontants = "+(s.length() - vowelCount));
+	}
