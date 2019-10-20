@@ -1,0 +1,7 @@
+public static int countWords(String s){
+		return s.trim().
+				replaceAll(" ", "<>").
+				replaceAll("><", "").
+				replaceAll("<>", " ").
+				split(" ").length;
+	}
