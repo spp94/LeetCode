@@ -1,0 +1,21 @@
+import java.util.HashMap;
+
+public class Program1 {
+	public static void main(String...args){
+		String s = "Shubham";
+		printDuplicateCharFromString(s);
+	}
+	
+	public static void printDuplicateCharFromString(String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(char ch : s.toCharArray()){
+			int count = (map.containsKey(ch)) ? map.get(ch)+1 : 1;
+			map.put(ch, count);
+		}
+		for(char key : map.keySet()){
+			if(map.get(key) > 1){
+				System.out.print(key+" ");
+			}
+		}
+	}
+}
