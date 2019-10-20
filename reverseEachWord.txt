@@ -1,0 +1,7 @@
+public static String reverseEachWord(String s){
+		String rev = "";
+		for(String word : s.trim().split(" ")){
+			rev = rev.concat(" ").concat(new StringBuffer(word).reverse().toString());
+		}
+		return rev;
+	}
