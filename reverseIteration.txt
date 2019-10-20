@@ -1,0 +1,8 @@
+public static String reverseIteration(String s){
+		String rev = "";
+		int l = s.trim().length();
+		for(int i = l-1; i >= 0; i--){
+			rev = rev.concat(s.charAt(i)+"");
+		}
+		return rev;
+	}
