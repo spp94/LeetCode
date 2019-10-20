@@ -1,0 +1,6 @@
+private static String reverseRec(String s, int index){
+		if(index == 0){
+			return s.charAt(0) + "";
+		}
+		return s.charAt(index) + reverseRec(s, --index);
+	}
