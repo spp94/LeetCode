@@ -1,0 +1,8 @@
+public static boolean isDigit(String s){
+		for(char ch : s.trim().toCharArray()){
+			if(!Character.isDigit(ch) ){
+				return false;
+			}
+		}
+		return true;
+	}
