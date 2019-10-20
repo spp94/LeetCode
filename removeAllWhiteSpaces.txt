@@ -1,0 +1,3 @@
+public static String removeAllWhiteSpaces(String s){
+		return s.trim().replace(" ","");
+	}
