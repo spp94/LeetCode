@@ -1,0 +1,23 @@
+public static String longestDistinctSequence(String s){
+		HashSet<Character> set = new HashSet<>();
+		int max_len = Integer.MIN_VALUE;
+		String longest = "", res = "";
+		for(char ch : s.trim().toCharArray()){
+			if(!set.contains(ch)){
+				set.add(ch);
+				longest += ch; 
+			}
+			else{
+				if(max_len < set.size()){
+					max_len = set.size();
+					res = longest;
+				}
+				else{
+					// do nothing
+				}
+				set = new HashSet<>();
+				longest = "";
+			}
+		}
+		return res;
+	}
