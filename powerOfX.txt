@@ -1,0 +1,13 @@
+public class Third{
+	public static void main(String...args){
+		int x = 10, y = 10009;
+		System.out.println(Math.log(x));
+		System.out.println(Math.log(y));
+		double a = Math.log(x);
+		int a_ = (int)a;
+		double b = Math.log(y);
+		int b_ = (int)b;
+		double c = Math.log10(y)/Math.log10(x);
+		System.out.println((c - (int)c) == 0);
+	}
+}
