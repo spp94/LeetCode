@@ -1,0 +1,18 @@
+public void maximumValue(String s){
+		maxValue(s);
+	}
+	
+	private void maxValue(String s){
+		int res = s.charAt(0)-48;
+		for(int i = 1; i < s.length(); i++){
+			char ch = s.charAt(i);
+			if(ch == '1' || ch == '0' || res <= 1){
+				res += ch-48;
+			}
+			else{
+				res *= ch-48;
+			}
+			System.out.println(res);
+		}
+		System.out.println(res);
+	}
