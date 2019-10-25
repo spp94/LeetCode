@@ -1,0 +1,15 @@
+public void reverse(String s){
+		System.out.println("Reverse Using String Buffer");
+		reverseUsingStringBuffer(s);
+		System.out.println("Reverse Using Iteration");
+		reverseUsingIteration(s);
+		System.out.println("Reverse Using Recursion");
+		System.out.println(reverseUsingRecursion(s, s.length()-1));
+		System.out.println("Reverse Using Stack");
+		reverseUsingStack(s);
+	}
+	
+	private void reverseUsingStringBuffer(String s){
+		System.out.println(new StringBuffer(s).reverse().toString());
+		System.out.println(new StringBuffer(s).reverse().toString().equals(s) ? "Palindrom" : "Not a Palindorme");
+	}
