@@ -1,0 +1,16 @@
+public void startAndEndWithSameCharacter(String s){
+		samePreAndPostCharacter(s);
+	}
+	
+	private void samePreAndPostCharacter(String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			int count = map.containsKey(ch) ? map.get(ch) + 1 : 1;
+			map.put(ch, count);
+		}
+		long count = 0;
+		for(char ch : map.keySet()){
+			count += map.get(ch) > 1 ? sum(map.get(ch)) : 0; 
+		}
+		System.out.println("Count = " + count);
+	}
