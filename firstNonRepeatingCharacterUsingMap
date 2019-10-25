@@ -1,0 +1,19 @@
+public void firstNonRepeatingCharacter(String s){
+		System.out.println("First Non Repeating Characters");
+		firstNonRepeatingCharacterUsingMap(s);
+	}
+	
+	private void firstNonRepeatingCharacterUsingMap(String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			int count = map.containsKey(ch) ? map.get(ch) + 1 : 1;
+			map.put(ch, count);
+		}
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(map.get(ch) == 1){
+				System.out.println(ch);
+				return;
+			}
+		}
+		System.out.println("No non repeating characters");
+	}
