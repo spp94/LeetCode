@@ -1,0 +1,8 @@
+public void isRotationalMirror(String a, String b){
+		isRotationalImage(a, b);
+	}
+	
+	private void isRotationalImage(String a, String b){
+		a = a+a;
+		System.out.println(a.contains(b) ? "Image" : "Not Image");
+	}
