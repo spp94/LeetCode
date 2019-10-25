@@ -1,0 +1,26 @@
+public void reverseCharacters(String s){
+		reverseOnlyCharacters(s);
+	}
+	
+	private void reverseOnlyCharacters(String s){
+		String rev = "";
+		int l = s.length();
+		for(int i = l-1; i >= 0; i--){
+			char ch = s.charAt(i);
+			if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')){
+				rev = rev + ch;
+			}
+		}
+		String temp = "";
+		int j = 0;
+		for(int i = 0; i < l; i++){
+			char ch = s.charAt(i);
+			if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')){
+				temp = temp + rev.charAt(j++);
+			}
+			else{
+				temp = temp + ch;
+			}
+		}
+		System.out.println(temp);
+	}
