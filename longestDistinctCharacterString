@@ -1,0 +1,27 @@
+public void longestDistinctCharacter(String s){
+		longestDistinctCharacterString(s);	
+	}
+	
+	private void longestDistinctCharacterString(String s){
+		HashSet<Character> set = new HashSet<>();
+		int max_length = Integer.MIN_VALUE;
+		String longestString = "", word = "";
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(!set.contains(ch)){
+				set.add(ch);
+				word = word + ch;
+				//System.out.println(word + " " + ch);
+			}
+			else{
+				if(set.size() > max_length){
+					max_length = set.size();
+					longestString = word;
+				}
+				word = ch+"";
+				set = new HashSet<Character>();
+				set.add(ch);
+			}
+		}
+		longestString = (max_length > word.length()) ? longestString : word; 
+		System.out.println("Longest Substring = " + longestString + " and length = " + longestString.length());
+	}
