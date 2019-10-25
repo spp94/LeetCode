@@ -1,0 +1,30 @@
+public void nextString(String s){
+		nextLexicographicallyString(s);
+	}
+	
+	private void nextLexicographicallyString(String s){
+		if(s == ""){
+			System.out.println("a");
+			return;
+		}
+		boolean flag = true;
+		s = s.trim().toLowerCase();
+		int l = s.length(), index = 0;
+		for(int i = l-1; i >= 0; i--){
+			char ch = s.charAt(i);
+			if(ch == 'z'){
+				continue;
+			}
+			else{
+				flag = false;
+				index = i;
+				break;
+			}
+		}
+		if(flag == false){
+			System.out.println(s.substring(0,index) + (char)(s.charAt(index)+1) + s.substring(index+1));
+		}
+		else{
+			System.out.println(s+"a");
+		}
+	}
