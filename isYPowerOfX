@@ -1,0 +1,8 @@
+public void isPowerofX(int x, int y){
+		isYPowerOfX(x, y);
+	}
+	
+	private void isYPowerOfX(int x, int y){
+		double d = Math.log10(y) / Math.log10(x);
+		System.out.println(d-(int)d > 0 ? "No" : "Yes");
+	}
