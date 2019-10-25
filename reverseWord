@@ -1,0 +1,11 @@
+public void reverseWords(String s){
+		reverseWord(s);
+	}
+	
+	private void reverseWord(String s){
+		String[] temp = s.trim().replace(".", " ").split(" ");
+		for(int i = temp.length-1; i > 0; i--){
+			System.out.print(temp[i]+ ".");
+		}
+		System.out.println(temp[0]);
+	}
