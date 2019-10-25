@@ -1,0 +1,18 @@
+public void printAllDuplicates(String s){
+		System.out.println("Print All Duplicates Using Array");
+		printAllDuplicatesUsingArray(s);
+		System.out.println("Print All Duplicates Using Hash Set");
+		printAllDuplicatesUsingHashSet(s);
+	}
+	
+	private void printAllDuplicatesUsingArray(String s){
+		int[] freq = new int[26];
+		for(Character ch : s.trim().toLowerCase().toCharArray()){
+			freq[ch-97]++;
+		}
+		for(int i = 0 ; i < 26; i++){
+			if(freq[i] > 1){
+				System.out.println((char)(97+i));
+			}
+		}
+	}
