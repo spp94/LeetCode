@@ -1,0 +1,17 @@
+public void isDigit(String s){
+		System.out.println("Is Digit using Try Catch");
+		isDigitUsingTryCatch(s);
+		System.out.println("Is Digit using Try Catch");
+		isDigitUsingIteration(s);
+		
+	}
+	
+	private void isDigitUsingTryCatch(String s){
+		try{
+			int n = Integer.parseInt(s);
+			System.out.println("Valid number");
+		}
+		catch(Exception ex){
+			System.out.println("Not a valid number");
+		}
+	}
