@@ -1,0 +1,14 @@
+public void smallestString(String[] s){
+		lexicographicallyShotestString(s);
+	}
+	
+	private void lexicographicallyShotestString(String[] s){
+		Arrays.sort(s, new StringExtensions());
+		for(String str : s){
+			System.out.print(str);
+		}
+	}
+	
+	public int compare(String s1, String s2){
+		return (s1 + s2).compareTo(s2 + s1);
+	}
