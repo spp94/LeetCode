@@ -1,0 +1,28 @@
+public void isBalancedExpression(String s){
+		isBalancedBracket(s);
+	}
+	
+	private void isBalancedBracket(String s){
+		Stack<Character> stack = new Stack<>();
+		HashMap<Character, Character> map = new HashMap<>();
+		map.put(')', '(');
+		map.put('}', '{');
+		map.put(']', '[');
+		boolean flag = true;
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(ch == '(' || ch == '{' || ch == '['){
+				stack.push(ch);
+			}
+			else{
+				if(!stack.isEmpty() && stack.peek() == map.get(ch)){
+					stack.pop();
+					continue;
+				}
+				else{
+					flag = false;
+					break;
+				}
+			}
+		}
+		System.out.println(flag && stack.isEmpty() ? "Balanced" : "Not Balanced");
+	}
