@@ -1,0 +1,8 @@
+private String reverseUsingRecursion(String s, int index){
+		if(index < 0){
+			return "";
+		}
+		else{
+			return s.charAt(index) + reverseUsingRecursion(s, index-1);
+		}
+	}
