@@ -1,0 +1,16 @@
+public void removeDuplicate(String s){
+		removeDuplicates(s);
+		removeDuplicatesUsingArray(s);
+	}
+	
+	private void removeDuplicates(String s){
+		HashSet<Character> set = new HashSet<>();
+		String res = "";
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(!set.contains(ch)){
+				set.add(ch);
+				res = res + ch;
+			}
+		}
+		System.out.println(res);
+	}
