@@ -1,0 +1,14 @@
+public void makeStringXORZero(String s){
+		makeXORZero(s);
+	}
+	
+	private void makeXORZero(String s){
+		int[] arr = new int[2];
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			arr[ch-48]++;
+		}
+		int res = 0;
+		res += (arr[0] % 2 == 1) ? arr[0] : 0;
+		res += (arr[1] % 2 == 1) ? arr[1] : 0;
+		System.out.println(res);
+	}
