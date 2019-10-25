@@ -1,0 +1,25 @@
+public void totalPermutations(String s){
+		totalPermutationsCount(s);
+	}
+	
+	private void totalPermutationsCount(String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			int count = map.containsKey(ch) ? map.get(ch)+1 : 1;
+			map.put(ch,  count);
+		}
+		int numerator = factorial(s.length());
+		int denominator = 1;
+		for(char ch : map.keySet()){
+			denominator *= map.get(ch) > 1 ? factorial(map.get(ch)) : 1; 
+		}
+		System.out.println(numerator/denominator);
+	}
+  
+  private int factorial(int n){
+		int fact = 1;
+		for(int i = 2; i <= n; i++){
+			fact *= i;
+		}
+		return fact;
+	}
