@@ -1,0 +1,26 @@
+private void isAnagramUsingMap(String s1, String s2){
+		HashMap<Character, Integer> map1 = new HashMap<>();
+		for(char ch : s1.trim().toLowerCase().toCharArray()){
+			int count = map1.containsKey(ch) ? map1.get(ch) + 1 : 1;
+			map1.put(ch, count);
+		}
+		HashMap<Character, Integer> map2 = new HashMap<>();
+		for(char ch : s2.trim().toLowerCase().toCharArray()){
+			int count = map2.containsKey(ch) ? map2.get(ch) + 1 : 1;
+			map2.put(ch, count);
+		}
+		boolean flag = true;
+		for(char ch : map1.keySet()){
+			if(!map2.containsKey(ch)){
+				flag = false;
+				break;
+			}
+			else{
+				if(map2.get(ch) != map1.get(ch)){
+					flag = false;
+					break;
+				}
+			}
+		}
+		System.out.println(flag ? "Anagram" : "Not Anagram");
+	}
