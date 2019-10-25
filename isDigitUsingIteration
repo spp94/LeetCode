@@ -1,0 +1,10 @@
+private void isDigitUsingIteration(String s){
+		int count = 0;
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(!(ch >= 0 && ch <= 9)){
+				count = 1;
+				break;
+			}
+		}
+		System.out.println(count == 0 ? "Valid number" : "Not a valid number");
+	}
