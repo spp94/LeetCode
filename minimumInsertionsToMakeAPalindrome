@@ -1,0 +1,17 @@
+public void minimumInsertionsToMakePalindrome(String s){
+		System.out.println("Minimum Insertions To Make Palindrome");
+		minimumInsertionsToMakeAPalindrome(s);
+	}
+	
+	private void minimumInsertionsToMakeAPalindrome(String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			int count = map.containsKey(ch) ? map.get(ch) + 1 : 1;
+			map.put(ch, count);
+		}
+		int oddCount = 0;
+		for(char ch : map.keySet()){
+			oddCount += (map.get(ch) % 2 == 1) ? 1 : 0;
+		}
+		System.out.println(oddCount == 0 ? 0 : oddCount-1);
+	}
