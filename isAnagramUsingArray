@@ -1,0 +1,30 @@
+public void isAnagram(String s1, String s2){
+		System.out.println("Print All Duplicates Using Array");
+		isAnagramUsingArray(s1, s2);
+		System.out.println("Print All Duplicates Using Hash Set");
+		isAnagramUsingMap(s1, s2);
+		System.out.println("Print All Duplicates Using Sorting");
+		isAnagramUsingSort(s1, s2);
+	}
+	
+	private void isAnagramUsingArray(String s1, String s2){
+		int[] freq1 = new int[26];
+		for(char ch : s1.trim().toLowerCase().toCharArray()){
+			freq1[ch-97]++;
+		}
+		
+		int[] freq2 = new int[26];
+		for(char ch : s2.trim().toLowerCase().toCharArray()){
+			freq2[ch-97]++;
+		}
+		
+		boolean flag = true;
+		for(int i = 0; i < 26; i++){
+			if(freq1[i] != freq2[i] && freq1[i] != 0){
+				flag = false;
+				break;
+			}
+		}
+		
+		System.out.println(flag ? "Anagram" : "Not Anagram");
+	}
