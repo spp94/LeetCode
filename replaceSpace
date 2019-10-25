@@ -1,0 +1,3 @@
+public void replaceSpace(String s){
+		System.out.println(s.replace(" ", "%20"));
+	}
