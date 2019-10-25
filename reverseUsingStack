@@ -1,0 +1,11 @@
+private void reverseUsingStack(String s){
+		Stack<Character> stack = new Stack<>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			stack.push(ch);
+		}
+		StringBuffer str = new StringBuffer();
+		while(!stack.isEmpty()){
+			str.append(stack.pop());
+		}
+		System.out.println(str);
+	}
