@@ -1,0 +1,11 @@
+private void printAllDuplicatesUsingHashSet(String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			int count = (map.containsKey(ch)) ? map.get(ch) + 1 : 1;
+			map.put(ch, count);
+		}
+		for(char ch : map.keySet()){
+			if(map.get(ch) > 1)
+			System.out.println(ch);
+		}
+	}
