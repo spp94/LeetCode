@@ -1,0 +1,7 @@
+private void findRepeatedElement_3(int[] arr){
+		int sum = 0, n = arr.length-1;
+		for(int number : arr){
+			sum += number;
+		}
+		System.out.println("3 : "+(sum - (n*(n+1)/2)));
+	}
