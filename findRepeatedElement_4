@@ -1,0 +1,10 @@
+private void findRepeatedElement_4(int[] arr){
+		int xor = 0;
+		for(int number : arr){
+			xor ^= number;
+		}
+		for(int i = 1; i <= arr.length-1; i++){
+			xor ^= i;
+		}
+		System.out.println("4 : "+xor);
+	}
