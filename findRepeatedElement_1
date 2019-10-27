@@ -1,0 +1,12 @@
+private void findRepeatedElement_1(int[] arr){
+		HashSet<Integer> set = new HashSet<>();
+		for(int number : arr){
+			if(!set.contains(number)){
+				set.add(number);
+			}
+			else{
+				System.out.println("1 : "+number);
+				break;
+			}
+		}
+	}
