@@ -1,0 +1,10 @@
+private void findMissingNumber_3(int[] arr){
+		int xor = arr[0], n = arr.length;
+		for(int i = 1 ; i < n; i++){
+			xor ^= arr[i];
+		}
+		for(int i = 1; i <= n+1; i++){
+			xor ^= i;
+		}
+		System.out.println("3 : "+xor);
+	}
