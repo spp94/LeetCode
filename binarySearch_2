@@ -1,0 +1,4 @@
+private void binarySearch_2(int[] arr, int key){
+		int res = Arrays.binarySearch(arr, key);
+		System.out.println((res > 0) ? "2: present" : "2 : not present");
+	}
