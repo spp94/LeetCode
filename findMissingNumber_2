@@ -1,0 +1,7 @@
+private void findMissingNumber_2(int[] arr){
+		int sum = 0, n = arr.length;
+		for(int number : arr){
+			sum += number;
+		}
+		System.out.println("2 : "+(((n+1)*(n+2)/2) - sum));
+	}
