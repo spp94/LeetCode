@@ -1,0 +1,13 @@
+private void subarrayExists_1(int[] arr){
+		HashSet<Integer> set = new HashSet<>();
+		int sum = 0;
+		for(int number : arr){
+			sum += number;
+			if(set.contains(sum) || sum == 0){
+				System.out.println("True");
+				return;
+			}
+			set.add(sum);
+		}
+		System.out.println("False");
+	}
