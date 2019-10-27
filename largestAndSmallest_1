@@ -1,0 +1,12 @@
+private void largestAndSmallest_1(int[] arr){
+		int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+		for(int number : arr){
+			if(number > max){
+				max = number;
+			}
+			if(min > number){
+				min = number;
+			}
+		}
+		System.out.println("1 : " + min + " " + max);
+	}
