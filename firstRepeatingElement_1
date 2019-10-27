@@ -1,0 +1,12 @@
+private void firstRepeatingElement_1(int[] arr){
+		HashSet<Integer> set = new HashSet<Integer>();
+		for(int number : arr){
+			if(!set.contains(number)){
+				set.add(number);
+			}
+			else{
+				System.out.println(number);
+				break;
+			}
+		}
+	}
