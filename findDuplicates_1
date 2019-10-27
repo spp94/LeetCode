@@ -1,0 +1,13 @@
+private void findDuplicates_1(int[] arr){
+		HashMap<Integer, Integer> map = new HashMap<>();
+		for(int number : arr){
+			int count = map.containsKey(number) ? map.get(number)+1 : 1;
+			map.put(number, count);
+		}
+		for(int key : map.keySet()){
+			if(map.get(key) > 1){
+				System.out.print(key+" ");
+			}
+		}
+		System.out.println("");
+	}
