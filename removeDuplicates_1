@@ -1,0 +1,10 @@
+private void removeDuplicates_1(int[] arr){
+		HashSet<Integer> set = new HashSet<>();
+		for(int number : arr){
+			set.add(number);
+		}
+		for(int number : set){
+			System.out.print(number+" ");
+		}
+		System.out.println("");
+	}
