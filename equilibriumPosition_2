@@ -1,0 +1,15 @@
+private void equilibriumPosition_2(int[] arr){
+		int leftSum = 0, l = arr.length, sum = 0;
+		for(int number : arr){
+			sum += number;
+		}
+		for(int i = 0; i < l; i++){
+			leftSum += arr[i];
+			if(leftSum-arr[i] == sum-leftSum){
+				System.out.println("Element = "+arr[i]+" at index "+i);
+				return;
+			}
+		}
+		System.out.println("-1");
+	}
+	
