@@ -1,0 +1,12 @@
+private void findRepeatedElement_2(int[] arr){
+		HashMap<Integer, Integer> map = new HashMap<>();
+		for(int number : arr){
+			if(map.containsKey(number)){
+				System.out.println("2 : "+number);
+				break;
+			}
+			else{
+				map.put(number,  1);
+			}
+		}
+	}
