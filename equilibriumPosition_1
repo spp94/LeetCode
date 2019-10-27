@@ -1,0 +1,24 @@
+private void equilibriumPosition_1(int[] arr){
+		int l = arr.length;
+		int[] leftSum = new int[l];
+		int[] rightSum = new int[l];
+	    leftSum[0] = arr[0];
+	    rightSum[l-1] = arr[l-1];
+		for(int i = 1; i < l; i++){
+			leftSum[i] += arr[i] + leftSum[i-1];
+		}
+		for(int i = l-2; i >= 0; i--){
+			rightSum[i] += arr[i] + rightSum[i+1];
+		}
+		int i;
+		for(i = 0; i < l; i++){
+			if(leftSum[i] == rightSum[i])
+				break;
+		}
+		if(i == l){
+			System.out.println("-1");
+		}
+		else{
+			System.out.println("Element = "+arr[i]+" at index "+i);
+		}
+	}
