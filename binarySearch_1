@@ -1,0 +1,13 @@
+private void binarySearch_1(int[] arr, int key){
+		int f = 0, l = arr.length;
+		while(f < l){
+			int mid = (f+l)/2;
+			if(arr[mid] == key){
+				System.out.println("1 : "+key + " is present");
+				return;
+			}
+			if(key > arr[mid])  f = mid+1;
+			else l = mid-1;
+		}
+		System.out.println("1 : "+key+ " not present");
+	}
