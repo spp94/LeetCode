@@ -1,0 +1,15 @@
+private void reverseArray_1(int[] arr, int k){
+		int l = arr.length;
+		for(int i = 0; i < l; i = i+k){
+			int len = Math.min(i+k-1, l-1);
+			for(int j = i; j <= len/2; j++){
+				int temp = arr[j];
+				arr[j] =arr[len-j];
+				arr[len-j] = temp;
+			}
+		}
+		for(int number : arr){
+			System.out.print(number + " ");
+		}
+		System.out.println();
+	}
