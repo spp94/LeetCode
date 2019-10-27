@@ -1,0 +1,7 @@
+private void oddNumber_1(int[] arr){
+		int xor = 0;
+		for(int number : arr){
+			xor ^= number;
+		}
+		System.out.println("1 : "+xor);
+	}
