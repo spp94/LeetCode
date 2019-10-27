@@ -1,0 +1,11 @@
+private void largestNumber_1(String[] arr){
+		Arrays.sort(arr, new ArrayExtension());
+		for(String s : arr){
+			System.out.print(s);
+		}
+		System.out.println();
+	}
+	
+	public int compare(String s1, String s2) {
+		return (s2+s1).compareTo(s1+s2);
+	}
