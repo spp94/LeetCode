@@ -1,0 +1,19 @@
+private void leftSmallRightGreater_1(int[] arr){
+		int l = arr.length;
+		int[] left = new int[l];
+		int[] right = new int[l];
+		left[0] = arr[0];
+		right[l-1] = arr[l-1];
+		for(int i = 1; i < l; i++){
+			left[i] = Math.max(left[i-1], arr[i]);
+		}
+		for(int i = l-2; i >= 0; i--){
+			right[i] = Math.min(right[i+1], arr[i]);
+		}
+		for(int i = 1; i <= l-2; i++){
+			if(left[i] == right[i]){
+				System.out.print(arr[i]+" ");
+			}
+		}
+		System.out.println();
+	}
