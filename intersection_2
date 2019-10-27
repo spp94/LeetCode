@@ -1,0 +1,21 @@
+private void intersection_2(int[] a1, int[] a2){
+		HashMap<Integer, Integer> map1 = new HashMap<>();
+		for(int number : a1){
+			int count = map1.containsKey(number) ? map1.get(number)+1 : 1;
+			map1.put(number, count);
+		}
+		HashMap<Integer, Integer> map2 = new HashMap<>();
+		for(int number : a2){
+			int count = map2.containsKey(number) ? map2.get(number)+1 : 1;
+			map2.put(number, count);
+		}
+		System.out.println("-------Intersection--------");
+		for(int key : map1.keySet()){
+			if(map2.containsKey(key)){
+				for(int i = 1; i <= Math.min(map1.get(key), map2.get(key)); i++){
+					System.out.print(key+" ");
+				}
+			}
+		}
+		System.out.println("");
+	}
