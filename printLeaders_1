@@ -1,0 +1,11 @@
+private void printLeaders_1(int[] arr){
+		int l = arr.length, max = arr[l-1];
+		System.out.print(max+" ");
+		for(int i = l-2; i >= 0; i--){
+			if(arr[i] > max){
+				max = arr[i];
+				System.out.print(max+" ");
+			}
+		}
+		System.out.println();
+	}
