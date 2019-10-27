@@ -1,0 +1,14 @@
+private void firstNonRepeatingElement_1(int[] arr){
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int number : arr){
+			int count = map.containsKey(number) ? map.get(number)+1 : 1;
+			map.put(number, count);
+		}
+		for(int number : arr){
+			if(map.get(number) == 1){
+				System.out.println(map.get(number));
+				return;
+			}
+		}
+		System.out.println("-1");
+	}
