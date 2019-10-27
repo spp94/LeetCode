@@ -1,0 +1,12 @@
+private void smallestPositiveInteger_1(int[] arr){
+		int res = 1;
+		for(int number : arr){
+			if(res >= number){
+				res += number;
+			}
+			else{
+				break;
+			}
+		}
+		System.out.println("1 : "+res);
+	}
