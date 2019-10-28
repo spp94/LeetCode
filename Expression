@@ -1,0 +1,32 @@
+import java.util.*;
+public class Expression {
+	private List<Character> openBracket = Arrays.asList('(', '{', '[', '<');
+	private List<Character> closeBracket = Arrays.asList(')', '}', ']', '>');
+	public boolean isBalanced(String s){
+		Stack<Character> stack = new Stack<Character>();
+		for(char ch : s.trim().toCharArray()){
+			if(isOpenBracket(ch)){
+				stack.push(ch);
+			}
+			else{
+				if(stack.empty()){
+					return false;
+				}
+				char open = stack.peek();
+				if(isPair(open, ch)){
+					stack.pop();
+				}
+				else{
+					return false;
+				}
+			}
+		}
+		return stack.empty();
+	}
+	private boolean isOpenBracket(char ch){
+		return openBracket.contains(ch);
+	}
+	private boolean isPair(char open, char close){
+		return openBracket.indexOf(open) == closeBracket.indexOf(close);
+	}
+}
