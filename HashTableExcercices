@@ -1,0 +1,24 @@
+import java.util.*;
+public class HashTableExcercices {
+	public int twoSum(int[] arr, int sum){
+		Map<Integer, Integer> map = new HashMap<>(); 
+		int c = 0;
+		for(int number : arr){
+			int count = map.containsKey(number) ? map.get(number)+1 : 1;
+			map.put(number, count);
+		}
+		for(int key : map.keySet()){
+			int x = key;
+			int y = sum - x;
+			if(map.containsKey(y)){
+				c += map.get(y);
+				System.out.println(x + " " + y);
+			}
+			if(x == y){
+				c--;
+			}
+			System.out.println(key + " --> c = "+c );
+		}
+		return c % 2 == 0 ? c/2 : (c+1)/2;
+	}
+}
