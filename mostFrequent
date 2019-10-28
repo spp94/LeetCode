@@ -1,0 +1,15 @@
+public void mostFrequent(int[] arr){
+		Map<Integer, Integer> map = new HashMap<>();
+		for(int number : arr){
+			int count = map.containsKey(number) ? map.get(number)+1 : 1;
+			map.put(number, count);
+		}
+		int max = Integer.MIN_VALUE, maxNumber = 0;
+		for(int key : map.keySet()){
+			if(map.get(key) > max){
+				max = map.get(key);
+				maxNumber = key;
+			}
+		}
+		System.out.println(maxNumber+" "+ max);
+	}
