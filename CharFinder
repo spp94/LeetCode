@@ -1,0 +1,29 @@
+import java.util.*;
+public class CharFinder {
+	public char findFirstNonRepeatingCharacter(String s){
+		HashMap<Character, Integer> map = new HashMap<>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			int count = map.containsKey(ch) ? map.get(ch)+1 : 1;
+			map.put(ch, count);
+		}
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(map.get(ch) == 1){
+				return ch;
+			}
+		}
+		return Character.MIN_VALUE;
+	}
+	
+	public char firstRepeatingCharacter(String s){
+		HashSet<Character> set = new HashSet<Character>();
+		for(char ch : s.trim().toLowerCase().toCharArray()){
+			if(set.contains(ch)){
+				return ch;
+			}
+			else{
+				set.add(ch);
+			}
+		}
+		return Character.MIN_VALUE;
+	}
+}
