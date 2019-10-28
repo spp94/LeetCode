@@ -1,0 +1,74 @@
+import java.util.*;
+
+public class LinkedListQueue {
+	private class Node{
+		private int value;
+		private Node next;
+		public Node(int value){
+			this.value = value;
+		}
+	}
+	Node first = null, last = null;
+	private int front = 0, rear = 0, size = 0;
+	
+	public boolean isEmpty(){
+		return first == null; // return size == 0
+	}
+	
+	public void enqueue(int item){
+		addLast(item);
+	}
+	
+	private void addLast(int item){
+		Node node = new Node(item);
+		if(isEmpty()){
+			first = last = node;
+		}
+		else{
+			last.next = node;
+			last = node;
+		}
+		size++;
+		rear++;
+	}
+	
+	public void dequeue(){
+		removeFirst();
+	}
+	
+	private void removeFirst(){
+		if(isEmpty()){
+			throw new IllegalArgumentException();
+		}
+		else if(first == last){
+			first = last = null;
+		}
+		else{
+			first = first.next;
+		}
+		front++;
+		size--;
+	}
+	
+	public int peek(){
+		if(isEmpty()){
+			throw new IllegalArgumentException();
+		}
+		return first.value;
+	}
+	
+	public int size(){
+		return size;
+	}
+	
+	@Override
+	public String toString(){
+		List<Integer> list = new ArrayList<>();
+		Node current = first;
+		while(current != null){
+			list.add(current.value);
+			current = current.next;
+		}
+		return list.toString();
+	}
+}
