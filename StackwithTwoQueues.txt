@@ -1,0 +1,41 @@
+import java.util.*;
+public class StackwithTwoQueues {
+	private Queue<Integer> queue1 = new ArrayDeque<>();
+	private Queue<Integer> queue2 = new ArrayDeque<>();
+	private int top;
+	
+	public void push(int item){
+		queue1.add(item);
+		top = item;
+	}
+	private boolean isEmpty(){
+		return queue1.size() == 0;
+	}
+	public int pop(){
+		if(isEmpty()){
+			throw new IllegalArgumentException();
+		}
+		moveQueue1ToQueue2();
+		int res = queue1.remove();
+		moveBackElementToQueue1();
+		return res;
+	}
+	private void moveQueue1ToQueue2(){
+		while(queue1.size() > 1){
+			top = queue1.remove();
+			queue2.add(top);
+		}
+	}
+	private void moveBackElementToQueue1(){
+		while(queue2.size() > 0){
+			top = queue2.remove();
+			queue1.add(top);
+		}
+	}
+	public void print(){
+		while(queue1.size() > 0){
+			System.out.print(queue1.remove() + " ");
+		}
+		System.out.println();
+	}
+}
