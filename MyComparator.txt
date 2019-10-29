@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Third{
+	public static void main(String...args){
+		String[] arr = {"Shubham", "Satyam", "Archana", "Rahul", "Kuldeep", "Shikhar", "Virat"};
+		Arrays.sort(arr, new MyComparator());
+		for(String name : arr){
+			System.out.println(name);
+		}
+	}
+}
+
+class MyComparator implements Comparator<String>
+{
+
+	@Override
+	public int compare(String s1, String s2) {
+		return s1.length() - s2.length();
+	}
+	
+}
