@@ -1,0 +1,59 @@
+public class PriorityQueue {
+	private int[] items;
+	public int count;
+	public PriorityQueue(int size) {
+		items = new int[size];
+	}
+	private boolean isEmpty(){
+		return count == 0;
+	}
+	private boolean isFull(){
+		return count == items.length;
+	}
+	
+	public void enqueue(int item){
+		if(isFull()){
+			throw new IllegalArgumentException();
+		}
+		else{
+			int index = getInsertIndex(item);
+			items[index] = item;
+			count++;
+		}
+	}
+	
+	private int getInsertIndex(int item){
+		int i;
+		for(i = count-1; i >= 0; i--){
+			if(items[i] > item){
+				items[i+1] = items[i];
+			}
+			else{
+				break;
+			}
+		}
+		return i+1;
+	}
+	
+	public int dequeue(){
+		if(isEmpty()){
+			throw new IllegalArgumentException();
+		}
+		else{
+			int value =  items[count];
+			count--;
+			return value;
+		}
+	}
+	
+	public int size(){
+		return count;
+	}
+	
+	public void print(){
+		for(int i = 0; i < count; i++){
+			System.out.print(items[i]+" ");
+		}
+		System.out.println();
+	}
+}
