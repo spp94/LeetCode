@@ -1,4 +1,4 @@
-private void union(int[] a1, int[] a2){
+private void union(int[] a1, int[] a2){ 
 		HashMap<Integer, Integer> map = new HashMap<>();
 		for(int number : a1){
 			int count = map.containsKey(number) ? map.get(number)+1 : 1;
