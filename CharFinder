@@ -1,5 +1,5 @@
-import java.util.*;
-public class CharFinder {
+import java.util.*; 
+public class CharFinder { 
 	public char findFirstNonRepeatingCharacter(String s){
 		HashMap<Character, Integer> map = new HashMap<>();
 		for(char ch : s.trim().toLowerCase().toCharArray()){
