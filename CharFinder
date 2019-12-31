@@ -1,4 +1,4 @@
-import java.util.*; 
+import java.util.*;
 public class CharFinder { 
 	public char findFirstNonRepeatingCharacter(String s){
 		HashMap<Character, Integer> map = new HashMap<>();
