@@ -1,4 +1,4 @@
-import java.util.*; 
+import java.util.*;
 public class HashTableExcercices {
 	public int twoSum(int[] arr, int sum){
 		Map<Integer, Integer> map = new HashMap<>(); 
