@@ -1,4 +1,4 @@
-public class Permutation{ 
+public class Permutation{
 	public void permutation(String s){
 		permute(s, 0, s.length()-1);
 	}
