@@ -1,4 +1,4 @@
-public class Solution {
+public class Solution { 
     public int isPalindrome(String A) 
     {
         A = A.trim().toLowerCase();
