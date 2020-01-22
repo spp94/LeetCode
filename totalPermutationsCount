@@ -1,4 +1,4 @@
-public void totalPermutations(String s){  
+public void totalPermutations(String s){   
 		totalPermutationsCount(s);
 	}
 	
