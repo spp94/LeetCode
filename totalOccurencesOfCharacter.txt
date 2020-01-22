@@ -1,4 +1,4 @@
-public static int totalOccurencesOfCharacter(String s, char ch){  
+public static int totalOccurencesOfCharacter(String s, char ch){   
 	  char[] S = s.trim().toCharArray();
 	  Arrays.sort(S);
 	  s = new String(S);
