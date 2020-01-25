@@ -1,4 +1,4 @@
-private void top3Elements_1(int[] arr){    
+private void top3Elements_1(int[] arr){
 		if(arr.length < 1){
 			System.out.println("-1");
 			return;
