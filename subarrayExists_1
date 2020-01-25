@@ -1,4 +1,4 @@
-private void subarrayExists_1(int[] arr){   
+private void subarrayExists_1(int[] arr){    
 		HashSet<Integer> set = new HashSet<>();
 		int sum = 0;
 		for(int number : arr){
