@@ -1,4 +1,4 @@
-	HashMap<Integer, Integer> map = new HashMap<>();     
+	HashMap<Integer, Integer> map = new HashMap<>();
 	public void sortOnFrequencies(Integer[] arr){
 		for(int number : arr){
 			int count = map.containsKey(number) ? map.get(number)+1 : 1;
