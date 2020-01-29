@@ -1,4 +1,4 @@
-class Solution{    
+class Solution{     
     public void sortColors(int[] nums) 
     {
      int n0 = 0, n1 = 0, n2 = 2;
