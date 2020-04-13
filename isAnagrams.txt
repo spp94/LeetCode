@@ -1,4 +1,4 @@
-	public static boolean isAnagrams(String s1, String s2){
+	public static boolean isAnagrams(String s1, String s2){ 
 		char[] A = new char[s1.length()];
 		char[] B = new char[s2.length()];
 		A = s1.toCharArray();
