@@ -1,4 +1,4 @@
-public void nextString(String s){
+public void nextString(String s){ 
 		nextLexicographicallyString(s);
 	}
 	
