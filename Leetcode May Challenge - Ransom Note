@@ -1,0 +1,30 @@
+class Solution {
+    public boolean canConstruct(String a, String b) {
+        Map<Character, Integer> map1 = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+        for(char ch : a.toCharArray()){
+            int count = map1.containsKey(ch) ? map1.get(ch)+1 : 1;
+            map1.put(ch, count);
+        }
+        for(char ch : b.toCharArray()){
+            int count = map2.containsKey(ch) ? map2.get(ch)+1 : 1;
+            map2.put(ch, count);
+        }
+        for(char key : map1.keySet()){
+            System.out.println(key + " : " + map1.get(key));
+        }
+        System.out.println();
+        for(char key : map2.keySet()){
+            System.out.println(key + " : " + map2.get(key));
+        }
+        for(char key : map1.keySet()){
+            if(map2.containsKey(key) && map2.get(key) >= map1.get(key)){
+                continue;
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
+}
