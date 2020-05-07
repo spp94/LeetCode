@@ -1,0 +1,20 @@
+class Solution {
+    public int numJewelsInStones(String J, String S) {
+        Map<Character, Integer> map = new HashMap<>();
+        for(char jewels : J.toCharArray()){
+            int count = 0;
+            for(char stones : S.toCharArray()){
+                if(stones == jewels){
+                    count++;
+                }
+            }
+            map.put(jewels, count);
+        }
+        int result = 0;
+        for(char key : map.keySet()){
+            result += map.get(key);
+        }
+        
+        return result;
+    }
+}
