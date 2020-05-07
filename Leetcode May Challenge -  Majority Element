@@ -1,0 +1,15 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int key = nums.length/2;
+        for(int n : nums){
+            int count = map.containsKey(n) ? map.get(n)+1 : 1;
+            map.put(n, count);
+            
+            if(map.get(n) > key){
+                return n;
+            }
+        }
+        return -1;
+    }
+}
