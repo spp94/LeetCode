@@ -1,0 +1,15 @@
+class Solution {
+    public int findComplement(int num) {
+        String s = Integer.toString(num, 2);
+        String complement = "";
+        for(char ch : s.toCharArray()){
+            if(ch == '0'){
+                complement += '1';
+            }
+            else{
+                complement += '0';
+            }
+        }
+        return Integer.parseInt(complement, 2);
+    }
+}
