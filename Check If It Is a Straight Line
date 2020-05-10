@@ -1,0 +1,20 @@
+class Solution {
+public boolean checkStraightLine(int[][] coordinates) {
+        int x1 = coordinates[0][0], y1 = coordinates[0][1];
+        int x2 = coordinates[1][0], y2 = coordinates[1][1];
+        float gSlope = slope(x1, y1, x2, y2);
+
+        for (int i = 1; i < coordinates.length; i++) {
+            int x11 = coordinates[i][0];
+            int y11 = coordinates[i][1];
+            float slop = slope(x1, y1, x11, y11);
+            if (gSlope != slop) return false;
+        }
+        return true;
+    }
+
+    private float slope(int x1, int y1, int x2, int y2) {
+        if ((x1 - x2) == 0) return 0;
+        return (float)(y2 - y1) / (x2 - x1);
+    }
+}
