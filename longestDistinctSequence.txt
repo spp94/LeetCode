@@ -1,4 +1,4 @@
-public static String longestDistinctSequence(String s){
+public static String longestDistinctSequence(String s){ 
 		HashSet<Character> set = new HashSet<>();
 		int max_len = Integer.MIN_VALUE;
 		String longest = "", res = "";
