@@ -1,4 +1,4 @@
-public void printAllDuplicates(String s){
+public void printAllDuplicates(String s){ 
 		System.out.println("Print All Duplicates Using Array");
 		printAllDuplicatesUsingArray(s);
 		System.out.println("Print All Duplicates Using Hash Set");
