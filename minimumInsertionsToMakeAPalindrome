@@ -1,4 +1,4 @@
-public void minimumInsertionsToMakePalindrome(String s){
+public void minimumInsertionsToMakePalindrome(String s){ 
 		System.out.println("Minimum Insertions To Make Palindrome");
 		minimumInsertionsToMakeAPalindrome(s);
 	}
