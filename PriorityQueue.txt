@@ -1,4 +1,4 @@
-public class PriorityQueue {
+public class PriorityQueue { 
 	private int[] items;
 	public int count;
 	public PriorityQueue(int size) {
