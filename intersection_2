@@ -1,4 +1,4 @@
-private void intersection_2(int[] a1, int[] a2){
+private void intersection_2(int[] a1, int[] a2){ 
 		HashMap<Integer, Integer> map1 = new HashMap<>();
 		for(int number : a1){
 			int count = map1.containsKey(number) ? map1.get(number)+1 : 1;
