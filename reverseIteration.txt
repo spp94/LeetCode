@@ -5,4 +5,4 @@ public static String reverseIteration(String s){
 			rev = rev.concat(s.charAt(i)+"");
 		}
 		return rev;
-	}
+	} 
