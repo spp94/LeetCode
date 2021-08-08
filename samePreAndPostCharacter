@@ -1,4 +1,4 @@
-public void startAndEndWithSameCharacter(String s){
+public void startAndEndWithSameCharacter(String s){ 
 		samePreAndPostCharacter(s);
 	}
 	
