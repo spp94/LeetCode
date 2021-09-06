@@ -49,6 +49,6 @@ public class Solution {
         bufferedWriter.newLine();
 
         bufferedReader.close();
-        bufferedWriter.close();
+        bufferedWriter.close(); 
     }
 }
