@@ -1,5 +1,5 @@
-import java.util.*;
-public class Expression {
+import java.util.*; 
+public class Expression { 
 	private List<Character> openBracket = Arrays.asList('(', '{', '[', '<');
 	private List<Character> closeBracket = Arrays.asList(')', '}', ']', '>');
 	public boolean isBalanced(String s){
