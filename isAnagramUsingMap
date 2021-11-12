@@ -12,7 +12,7 @@ private void isAnagramUsingMap(String s1, String s2){
 		boolean flag = true;
 		for(char ch : map1.keySet()){
 			if(!map2.containsKey(ch)){
-				flag = false;
+				flag = false; 
 				break;
 			}
 			else{
