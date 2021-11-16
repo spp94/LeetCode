@@ -1,4 +1,4 @@
-private void largestAndSmallest_2(int[] arr){  
+private void largestAndSmallest_2(int[] arr){ 
 		Arrays.sort(arr);
 		System.out.println("2 : " + arr[0] + " " + arr[arr.length-1]);
 	}
