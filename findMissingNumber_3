@@ -1,4 +1,4 @@
-private void findMissingNumber_3(int[] arr){
+private void findMissingNumber_3(int[] arr){ 
 		int xor = arr[0], n = arr.length;
 		for(int i = 1 ; i < n; i++){
 			xor ^= arr[i];
