@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 public class StackwithTwoQueues {
 	private Queue<Integer> queue1 = new ArrayDeque<>();
 	private Queue<Integer> queue2 = new ArrayDeque<>();
