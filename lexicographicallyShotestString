@@ -1,4 +1,4 @@
-public void smallestString(String[] s){
+public void smallestString(String[] s){ 
 		lexicographicallyShotestString(s);
 	}
 	
