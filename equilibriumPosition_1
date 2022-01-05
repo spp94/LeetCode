@@ -1,4 +1,4 @@
-private void equilibriumPosition_1(int[] arr){
+private void equilibriumPosition_1(int[] arr){ 
 		int l = arr.length;
 		int[] leftSum = new int[l];
 		int[] rightSum = new int[l];
