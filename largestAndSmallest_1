@@ -1,4 +1,4 @@
-private void largestAndSmallest_1(int[] arr){ 
+private void largestAndSmallest_1(int[] arr){  
 		int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
 		for(int number : arr){
 			if(number > max){
