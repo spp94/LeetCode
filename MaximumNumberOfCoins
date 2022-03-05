@@ -1,0 +1,13 @@
+// https://leetcode.com/problems/maximum-number-of-coins-you-can-get/submissions/
+class Solution {
+    public int maxCoins(int[] piles) {
+        int length = piles.length;
+        Arrays.sort(piles);
+        int result = 0;
+        for(int i = length/3; i < length; i = i + 2){
+            result += piles[i];
+        }
+        
+        return result;
+    }
+}
