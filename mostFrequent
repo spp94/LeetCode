@@ -1,4 +1,4 @@
-public void mostFrequent(int[] arr){
+public void mostFrequent(int[] arr){ 
 		Map<Integer, Integer> map = new HashMap<>();
 		for(int number : arr){
 			int count = map.containsKey(number) ? map.get(number)+1 : 1;
