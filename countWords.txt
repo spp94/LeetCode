@@ -1,4 +1,4 @@
-public static int countWords(String s){
+public static int countWords(String s){ 
 		return s.trim().
 				replaceAll(" ", "<>").
 				replaceAll("><", "").
