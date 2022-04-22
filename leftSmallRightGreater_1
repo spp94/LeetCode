@@ -1,4 +1,4 @@
-private void leftSmallRightGreater_1(int[] arr){
+private void leftSmallRightGreater_1(int[] arr){ 
 		int l = arr.length;
 		int[] left = new int[l];
 		int[] right = new int[l];
