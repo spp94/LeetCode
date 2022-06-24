@@ -6,7 +6,7 @@ public boolean checkStraightLine(int[][] coordinates) {
 
         for (int i = 1; i < coordinates.length; i++) {
             int x11 = coordinates[i][0];
-            int y11 = coordinates[i][1];
+            int y11 = coordinates[i][1]; 
             float slop = slope(x1, y1, x11, y11);
             if (gSlope != slop) return false;
         }
