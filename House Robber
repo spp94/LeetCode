@@ -1,0 +1,23 @@
+import java.util.*;
+public class Solution {
+
+	public static int maxMoneyLooted(int[] houses) {
+        int size = houses.length;
+        if(size == 1){
+            return houses[0];
+        }
+        if(size == 2){
+            return Math.max(houses[0], houses[1]);
+        }
+        int prev1 = Math.max(houses[0], houses[1]);
+        int prev2 = houses[0];
+        for(int i = 3; i <= size; i++){
+            int pick = houses[i-1] + prev2;
+            int not_pick = prev1;
+            int current = Math.max(pick, not_pick);
+            prev2 = prev1;
+            prev1 = current;
+        }
+        return prev1;
+	}
+}
