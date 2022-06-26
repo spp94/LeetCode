@@ -1,0 +1,31 @@
+import java.util.*;
+public class Solution {
+	public static long houseRobber(int[] valueInHouse) {
+        if(valueInHouse.length == 1) {
+            return valueInHouse[0];
+        }
+        long first = f(Arrays.copyOfRange(valueInHouse, 0, valueInHouse.length-1));
+        long second = f(Arrays.copyOfRange(valueInHouse, 1, valueInHouse.length));
+        
+        return Math.max(first, second);
+	}	
+    public static long f(int[] arr){
+        int size = arr.length;
+        if(size == 1) {
+            return arr[0];
+        }
+        if(size == 2) {
+            return Math.max(arr[0], arr[1]);
+        }
+        int prev1 = Math.max(arr[0], arr[1]);
+        int prev2 = arr[0];
+        for(int i = 3; i <= size; i++){
+            int pick = arr[i-1] + prev2;
+            int not_pick = prev1;
+            int current = Math.max(pick, not_pick);
+            prev2 = prev1;
+            prev1 = current;
+        }
+        return prev1;
+    }
+}
