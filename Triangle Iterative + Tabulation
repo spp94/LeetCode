@@ -1,0 +1,32 @@
+import java.util.*;
+public class Solution {
+    public static int minimumPathSum(int[][] triangle, int n) {
+        int[][] dp = new int[n][n];
+        for(int i = 0; i < n; i++) {
+            dp[n-1][i] = triangle[n-1][i];
+        }
+        for(int i = n-2; i >= 0; i--) {
+            for(int j = 0; j <= i; j++) {
+                int down = triangle[i][j] + dp[i+1][j];
+                int diagonal = triangle[i][j] + dp[i+1][j+1];
+                dp[i][j] = Math.min(down, diagonal);
+            }
+        }
+        
+        return dp[0][0];
+    }
+    public static int f(int r, int c, int n, int[][] triangle, int[][] dp) {
+        // Base condition
+        if(r == n-1) {
+            return triangle[r][c];
+        }
+        if(dp[r][c] != -1) {
+            return dp[r][c];
+        }
+        
+        int down = f(r+1, c, n, triangle, dp) + triangle[r][c];
+        int diagonal = f(r+1, c+1, n, triangle, dp) + triangle[r][c];
+        
+        return dp[r][c] = Math.min(down, diagonal);
+    }
+}
