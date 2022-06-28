@@ -1,0 +1,24 @@
+import java.util.*;
+public class Solution {
+    public static int minimumPathSum(int[][] triangle, int n) {
+        int[][] dp = new int[n][n];
+        for(int[] rows: dp) {
+            Arrays.fill(rows, -1);
+        }
+        return f(0, 0, n, triangle, dp);
+    }
+    public static int f(int r, int c, int n, int[][] triangle, int[][] dp) {
+        // Base condition
+        if(r == n-1) {
+            return triangle[r][c];
+        }
+        if(dp[r][c] != -1) {
+            return dp[r][c];
+        }
+        
+        int down = f(r+1, c, n, triangle, dp) + triangle[r][c];
+        int diagonal = f(r+1, c+1, n, triangle, dp) + triangle[r][c];
+        
+        return dp[r][c] = Math.min(down, diagonal);
+    }
+}
