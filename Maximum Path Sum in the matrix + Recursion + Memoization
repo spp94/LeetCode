@@ -1,0 +1,33 @@
+import java.util.*;
+public class Solution {
+	public static int getMaxPathSum(int[][] matrix) {
+        int[][] dp = new int[matrix.length][matrix[0].length];
+        for(int[] row : dp){
+            Arrays.fill(row, -1);
+        }
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < matrix[0].length; i++) {
+            max = Math.max(max, f(matrix.length-1, i, matrix, dp));
+        }
+        
+        return max;
+	}
+    public static int f(int r, int c, int[][] matrix, int[][] dp) {
+        // Corner case
+        if(c < 0 || c >= matrix[0].length) {
+            return -99999999;
+        }
+        // Base condition
+        if(r == 0) {
+            return matrix[r][c];
+        }
+        if(dp[r][c] != -1) {
+            return dp[r][c];
+        }
+        int up = f(r-1, c, matrix, dp) + matrix[r][c];
+        int leftUp = f(r-1, c-1, matrix, dp) + matrix[r][c];
+        int rightUp = f(r-1, c+1, matrix, dp) + matrix[r][c];
+        
+        return dp[r][c] = Math.max(up, Math.max(leftUp, rightUp));
+    }
+}
