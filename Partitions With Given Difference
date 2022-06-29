@@ -1,0 +1,42 @@
+import java.util.*;
+public class Solution {
+	public static int countPartitions(int n, int d, int[] arr) {
+		int sum = 0;
+        for(int num : arr) {
+            sum += num;
+        }
+        if((sum - d) % 2 == 1 || (sum - d) < 0) {
+            return 0;
+        }
+        int target = (sum - d) / 2;
+        int[][] dp = new int[n][target+1];
+        for(int[] row : dp) {
+            Arrays.fill(row, -1);
+        }
+        return f(n-1, target, arr, dp);
+	}
+    public static int f(int index, int target, int[] arr, int[][] dp) {
+        if(index == 0) {
+            if(target == 0 && arr[index] == 0) {
+                return 2;
+            }
+            else if(target == 0 || target == arr[index]) {
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+        if(dp[index][target] != -1) {
+            return dp[index][target];
+        }
+        
+        int notPick = f(index-1, target, arr, dp);
+        int pick = 0;
+        if(arr[index] <= target) {
+            pick = f(index-1, target-arr[index], arr, dp);
+        }
+        
+        return dp[index][target] = (pick + notPick) % 1000000007;
+    }
+}
