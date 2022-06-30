@@ -1,0 +1,26 @@
+import java.util.*;
+public class Solution {
+    public static int unboundedKnapsack(int n, int w, int[] profit, int[] weight) {
+        int[][] dp = new int[n][w+1];
+        for(int[] row : dp) {
+            Arrays.fill(row, -1);
+        }
+        return f(n-1, w, profit, weight, dp);
+    }
+    public static int f(int index, int target, int[] value, int[] weight, int[][] dp) {
+        if(index == 0) {
+            return ((int)(target / weight[0])) * value[0];
+        }
+        if(dp[index][target] != -1) {
+            return dp[index][target];
+        }
+        
+        int notPick = 0 + f(index-1, target, value, weight, dp);
+        int pick = 0;
+        if(weight[index] <= target) {
+            pick = value[index] + f(index, target - weight[index], value, weight, dp);
+        }
+        
+        return dp[index][target] = Math.max(pick, notPick);
+    }
+}
