@@ -1,0 +1,26 @@
+import java.util.*;
+public class Solution {
+	public static long countWaysToMakeChange(int denominations[], int value){
+        int n = denominations.length;
+        long[][] dp = new long[n][value+1];
+        for(long[] row : dp) {
+            Arrays.fill(row, -1);
+        }
+        return f(n-1, value, denominations, dp);
+	}
+	public static long f(int index, int target, int[] arr, long[][] dp) {
+        if(index == 0) {
+            return target % arr[0] == 0 ? 1 : 0;
+        }
+        if(dp[index][target] != -1) {
+            return dp[index][target];
+        }
+        long notPick = f(index-1, target, arr, dp);
+        long pick = 0;
+        if(arr[index] <= target) {
+            pick = f(index, target-arr[index], arr, dp);
+        }
+        
+        return dp[index][target] = pick + notPick;
+    }
+}
