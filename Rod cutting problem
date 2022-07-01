@@ -1,0 +1,25 @@
+import java.util.*;
+public class Solution {
+	public static int cutRod(int price[], int n) {
+        int[][] dp = new int[n][n+1];
+        for(int[] row : dp) {
+            Arrays.fill(row, -1);
+        }
+		return f(n-1, n, price, dp);
+	}
+    public static int f(int index, int target, int[] arr, int[][] dp) {
+        if(index == 0) {
+            return target * arr[0];
+        }
+        if(dp[index][target] != -1) {
+            return dp[index][target];
+        }
+        int notTake = 0 + f(index-1, target, arr, dp);
+        int take = Integer.MIN_VALUE;
+        if((index+1) <= target) {
+            take = arr[index] + f(index, target-index-1, arr, dp);
+        }
+        
+        return dp[index][target] = Math.max(take, notTake);
+    }
+}
