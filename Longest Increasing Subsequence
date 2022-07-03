@@ -1,0 +1,28 @@
+import java.util.*;
+public class Solution {
+    public static int f(int index, int prevIndex, int n, int[] arr, int[][] dp) {
+        if(index == n) {
+            return 0;
+        }
+        if(dp[index][prevIndex+1] != -1) {
+            return dp[index][prevIndex+1];
+        }
+        // not pick
+        int length = 0 + f(index+1, prevIndex, n, arr, dp);
+        // pick
+        if(prevIndex == -1 || arr[index] > arr[prevIndex]) {
+            length = Math.max(length, 1 + f(index+1, index, n, arr, dp));
+        }
+        
+        return dp[index][prevIndex+1] = length;
+    }
+	public static int longestIncreasingSubsequence(int arr[]) {
+        int n = arr.length;
+        int[][] dp = new int[n][n+1];
+        for(int[] row : dp) {
+            Arrays.fill(row, -1);
+        }
+        return f(0, -1, n, arr, dp);
+	}
+
+}
