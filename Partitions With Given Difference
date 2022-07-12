@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 public class Solution {
 	public static int countPartitions(int n, int d, int[] arr) {
 		int sum = 0;
