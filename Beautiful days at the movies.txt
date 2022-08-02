@@ -15,7 +15,7 @@ public class Solution {
             int sum = Math.abs(start - Integer.parseInt((new StringBuilder(start+"")).reverse().toString()));
             count += (sum % k == 0)? 1 : 0;
         }
-        return count;
+        return count; 
     }
 
     private static final Scanner scanner = new Scanner(System.in);
