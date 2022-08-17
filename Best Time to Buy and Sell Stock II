@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 public class Solution {
     public static long getMaximumProfit (int n, long[] arr) {
         long[][] dp = new long[n+1][2];
