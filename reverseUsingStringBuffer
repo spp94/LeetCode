@@ -1,4 +1,4 @@
-public void reverse(String s){
+public void reverse(String s){ 
 		System.out.println("Reverse Using String Buffer");
 		reverseUsingStringBuffer(s);
 		System.out.println("Reverse Using Iteration");
