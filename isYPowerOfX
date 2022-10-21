@@ -1,4 +1,4 @@
-public void isPowerofX(int x, int y){
+public void isPowerofX(int x, int y){ 
 		isYPowerOfX(x, y);
 	}
 	
