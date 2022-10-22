@@ -16,7 +16,7 @@ public class Solution {
                     count++;
                 }
             }
-            return (count < k)? "YES":"NO";
+            return (count < k)? "YES":"NO"; 
     }
 
     private static final Scanner scanner = new Scanner(System.in);
