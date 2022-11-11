@@ -1,4 +1,4 @@
-private void findDuplicates_1(int[] arr){
+private void findDuplicates_1(int[] arr){ 
 		HashMap<Integer, Integer> map = new HashMap<>();
 		for(int number : arr){
 			int count = map.containsKey(number) ? map.get(number)+1 : 1;
