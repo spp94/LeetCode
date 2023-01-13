@@ -1,0 +1,20 @@
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+        int first = 0, last = n - 1;
+        for (int i = n-1; i>= 0; i--) {
+            int a = nums[first] * nums[first];
+            int b = nums[last] * nums[last];
+            result[i] = Math.max(a, b);
+            if(a > b) {
+                first++;
+            }
+            else {
+                last--;
+            }
+        }
+
+        return result;
+    }
+}
