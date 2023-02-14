@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public boolean checkInclusion(String s1, String s2) { 
         int l1 = s1.length(), l2 = s2.length();
         if(l1 > l2) {
