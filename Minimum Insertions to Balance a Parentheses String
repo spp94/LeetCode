@@ -1,0 +1,47 @@
+class Solution {
+        public int minInsertions(String s) {
+        int count = 0;
+        s = s.replace("(", "[").replace("))", "]");
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if(isOpeningBraces(ch)) {
+                stack.push(ch);
+            }
+            else {
+                if(isClosingBraces(ch)) {
+                    if(!stack.isEmpty()) {
+                        stack.pop();
+                    }
+                    else {
+                        count++;
+                    }
+                }
+                else {
+                    if(!stack.isEmpty()) {
+                        stack.pop();
+                        count = count + 1;
+                    }
+                    else {
+                        count = count + 2;
+                    }
+                }
+            }
+        }
+
+        while (!stack.isEmpty()) {
+            count = count + 2;
+            stack.pop();
+        }
+
+        return count;
+    }
+
+    private boolean isOpeningBraces(char bracket) {
+        return bracket == '[';
+    }
+
+    private boolean isClosingBraces(char bracket) {
+        return bracket == ']';
+    }
+}
