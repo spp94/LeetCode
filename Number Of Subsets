@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 public class Solution {
     public static int findWays(int num[], int tar) {
         int n = num.length;
