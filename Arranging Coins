@@ -1,4 +1,4 @@
-class Solution { 
+class Solution {
     public int arrangeCoins(int n) {
         long discriminant = (long) Math.sqrt( 1 + (long)(8) * n);
         long x1 = (long) Math.floor((-1 + discriminant) / 2);
