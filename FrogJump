@@ -1,4 +1,4 @@
-import java.util.*; 
+import java.util.*;
 public class Solution {
     public static int frogJump(int n, int heights[]) {
         return f(n, heights);
