@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public int climbStairs(int n) {
         int[] temp = new int[n+1];
         Arrays.fill(temp, -1);
