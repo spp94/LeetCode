@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 public class Solution {
     public static int minimumPathSum(int[][] triangle, int n) {
         int[][] dp = new int[n][n];
