@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.* ;
+
+public class Solution {
+	public static int findMajority(int[] arr, int n) {
+		int candidate = arr[0], count = 1;
+		for(int i = 1; i < n; i++) {
+			if(count == 0) {
+				candidate = arr[i];
+				count = 1;
+			}
+			else if(arr[i] == candidate) {
+				count++;
+			}
+			else if(arr[i] != candidate) {
+				count--;
+			}
+		}
+
+        int c = 0;
+		for(int num : arr) {
+			if(candidate == num) {
+				c++;
+			}
+		}
+		
+		return (c > n/2) ? candidate : -1;
+	}
+}
