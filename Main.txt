@@ -1,4 +1,4 @@
-public static int toInteger(String s){
+public static int toInteger(String s){ 
 		return Integer.parseInt(s);
 	}
 	
