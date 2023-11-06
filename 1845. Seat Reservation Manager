@@ -1,0 +1,26 @@
+import java.util.*;
+
+class SeatManager {
+    private PriorityQueue<Integer> priorityQueue;
+    public SeatManager(int n) {
+        priorityQueue  = new PriorityQueue();
+        for(int i = 1; i <= n; i++) {
+            priorityQueue.offer(i);
+        }
+    }
+    
+    public int reserve() {
+        return priorityQueue.poll();
+    }
+    
+    public void unreserve(int seatNumber) {
+        priorityQueue.offer(seatNumber);
+    }
+}
+
+/**
+ * Your SeatManager object will be instantiated and called as such:
+ * SeatManager obj = new SeatManager(n);
+ * int param_1 = obj.reserve();
+ * obj.unreserve(seatNumber);
+ */
