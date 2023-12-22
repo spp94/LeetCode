@@ -1,4 +1,4 @@
-import java.util.*;  
+import java.util.*;
 public class Solution{  
     static int knapsack(int[] weight, int[] value, int n, int maxWeight) {
         int[][] dp = new int[n][maxWeight+1];
