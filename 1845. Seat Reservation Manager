@@ -1,6 +1,6 @@
 import java.util.*;
 
-class SeatManager { 
+class SeatManager {
     private PriorityQueue<Integer> priorityQueue;
     public SeatManager(int n) {
         priorityQueue  = new PriorityQueue();
