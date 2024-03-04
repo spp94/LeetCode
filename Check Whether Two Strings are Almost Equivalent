@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public boolean checkAlmostEquivalent(String word1, String word2) {
         Map<Character, Integer> map = new HashMap<>();
         for(char ch : word1.toCharArray()) {
