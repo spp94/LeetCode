@@ -1,4 +1,4 @@
-import java.util.*; 
+import java.util.*;
 public class Solution { 
     public static int f(int index, int buy, int n, int[] prices, int[][] dp) {
         if(index >= n) {
