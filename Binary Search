@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public int search(int[] nums, int target) {
         int first = 0, last = nums.length-1;
         while(first <= last) {
