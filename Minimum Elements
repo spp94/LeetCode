@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*; 
 public class Solution {
     public static int minimumElements(int num[], int x) {
         int n = num.length;
