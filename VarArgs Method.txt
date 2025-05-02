@@ -1,4 +1,4 @@
-public class VarArgs {
+public class VarArgs { 
 	static void sum(int... arr){
 		System.out.println("VarArgs Method");
 	}
